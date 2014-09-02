@@ -9,7 +9,7 @@
   </ul>
 <% end %>
 
-<form action="/lesson/<%= @lesson.id %>" method='post' id='edit_form'>
+<form action="/lessons/<%= @lesson.id %>" method='post' id='edit_form'>
   <input name='_method' value='patch' type='hidden'>
   <label for='lesson_name'>Edit Name</label>
   <input id='lesson_name' name='lesson[name]' type='text' value='<%= @lesson.name %>'>
