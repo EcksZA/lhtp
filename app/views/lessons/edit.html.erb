@@ -1,0 +1,20 @@
+<h1>Edit The Lesson</h1>
+<h2><%= @lesson.name %></h2>
+
+<% if @lesson.errors.any? %>
+  <ul>
+    <% @lesson.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="/lesson/<%= @lesson.id %>" method='post' id='edit_form'>
+  <input name='_method' value='patch' type='hidden'>
+  <label for='lesson_name'>Edit Name</label>
+  <input id='lesson_name' name='lesson[name]' type='text' value='<%= @lesson.name %>'>
+  <button>Edit Lesson</button>
+</form>
+<br />
+<textarea name='lesson[content]' form='edit_form'>
+</textarea>
