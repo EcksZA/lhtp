@@ -1,5 +1,14 @@
 <h1>Add A New Lesson</h1>
 
+<% if @lesson.errors.any? %>
+<h3>Please fix these errors:</h3>
+  <ul>
+  <% @lesson.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+  </ul>
+<% end %>
+
 <form action="/lessons" method='post' id='new_lesson'>
   <label for='lesson_name'>Lesson Name</label>
   <input id='lesson_name' name='lesson[name]' type='text'>
