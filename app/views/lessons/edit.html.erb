@@ -12,6 +12,8 @@
 <form action="/lessons/<%= @lesson.id %>" method='post' id='edit_form'>
   <input name='_method' value='patch' type='hidden'>
   <label for='lesson_name'>Edit Name</label>
+  <label for='lesson_number'>Number</label>
+  <input id='lesson_number' name='lesson[number]' type='text' value='<%= @lesson.number %>'>
   <input id='lesson_name' name='lesson[name]' type='text' value='<%= @lesson.name %>'>
   <button>Edit Lesson</button>
 </form>

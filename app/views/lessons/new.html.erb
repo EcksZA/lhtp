@@ -12,7 +12,12 @@
 <form action="/lessons" method='post' id='new_lesson'>
   <label for='lesson_name'>Lesson Name</label>
   <input id='lesson_name' name='lesson[name]' type='text' value='<%= @lesson.name %>'>
+  <label for='lesson_number'>Number</label>
+  <input id='lesson_number' name='lesson[number]' type='text' value='<%= @lesson.number %>'>
   <button>Add the lesson</button>
 </form>
 <br />
 <textarea name='lesson[content]' form='new_lesson'></textarea>
+
+<br />
+<p>Return to <a href="/lessons">main menu</a></p>
