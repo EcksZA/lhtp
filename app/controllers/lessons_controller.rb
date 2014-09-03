@@ -40,7 +40,7 @@ class LessonsController < ApplicationController
   end
 
   def destroy
-    @lesson = Lesson.find(params[:lesson])
+    @lesson = Lesson.find(params[:id])
     @lesson.destroy
     render('lessons/destroy.html.erb')
   end
