@@ -1,5 +1,6 @@
 class Lesson < ActiveRecord::Base
-  validates :name, :content, presence: true
+  validates :name, :content, :number, presence: true
+  # validate :number,
 
   def next
     lesson_sort = Lesson.all.sort_by(&:name)
