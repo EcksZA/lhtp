@@ -1,0 +1,14 @@
+<h1>Add A New Section</h1>
+
+<% if @section.errors.any? %>
+  <h3>Please fix the following errors:</h3>
+  <% @section.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
+
+<form action="/sections" method='post'>
+  <label for='section_name'>Name</label>
+  <input id='/section_name' name='section[name]' type='text'>
+  <button>Add Section</button>
+</form>

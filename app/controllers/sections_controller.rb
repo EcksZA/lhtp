@@ -8,4 +8,9 @@ class SectionsController < ApplicationController
     @section.find(params[:id])
     render('sections/show.html.erb')
   end
+
+  def new
+    @section = Section.new
+    render('sections/new.html.erb')
+  end
 end
