@@ -9,6 +9,14 @@
   </ul>
 <% end %>
 
+<select name='section[section_id]' form='new_lesson'>
+  <option value=''>Please select a section:</option>
+  <% @section.each do |section| %>
+    <option value='<%= section.id %>'><%= section.name %></option>
+  <% end %>
+</select>
+
+
 <form action="/lessons" method='post' id='new_lesson'>
   <label for='lesson_name'>Lesson Name</label>
   <input id='lesson_name' name='lesson[name]' type='text' value='<%= @lesson.name %>'>

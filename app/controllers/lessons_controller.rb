@@ -10,6 +10,7 @@ class LessonsController < ApplicationController
   end
 
   def new
+    @section = Section.all
     @lesson = Lesson.new
     render('lessons/new.html.erb')
   end
