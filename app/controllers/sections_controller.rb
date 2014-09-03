@@ -13,4 +13,16 @@ class SectionsController < ApplicationController
     @section = Section.new
     render('sections/new.html.erb')
   end
+
+  def create
+    @section = Section.new(params[:section])
+
+    if @section.save
+      redirect_to("/sections")
+    else
+      render('sections/new.html.erb')
+    end
+  end
+
+
 end
