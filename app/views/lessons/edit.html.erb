@@ -9,15 +9,27 @@
   </ul>
 <% end %>
 
+<select name='section[section_id]' form='new_lesson'>
+  <option value=''>Please select a section:</option>
+  <% @section.each do |section| %>
+    <option value='<%= section.id %>'><%= section.name %></option>
+  <% end %>
+</select>
+
+<br />
+
 <form action="/lessons/<%= @lesson.id %>" method='post' id='edit_form'>
   <input name='_method' value='patch' type='hidden'>
   <label for='lesson_name'>Edit Name</label>
   <input id='lesson_name' name='lesson[name]' type='text' value='<%= @lesson.name %>'>
   <label for='lesson_number'>Number</label>
   <input id='lesson_number' name='lesson[number]' type='text' value='<%= @lesson.number %>'>
+  <input type='hidden' value='<%= @section.section_id %>'>
   <button>Edit Lesson</button>
 </form>
+
 <br />
+
 <textarea name='lesson[content]' form='edit_form'></textarea>
 
 <br />
