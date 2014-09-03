@@ -1,6 +1,7 @@
 class Lesson < ActiveRecord::Base
   validates :name, :content, :number, presence: true
   validates :number, uniqueness: :true
+  belongs_to :section
 
   def next
     lesson_sort = Lesson.all.sort_by(&:name)
