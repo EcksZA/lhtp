@@ -1,5 +1,5 @@
 class Lesson < ActiveRecord::Base
-  validates :name, :content, :number, presence: true
+  validates :name, :content, :number, :section_id, presence: true
   validates :number, uniqueness: :true
   belongs_to :section
 
