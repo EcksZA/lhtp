@@ -39,5 +39,11 @@ class SectionsController < ApplicationController
     end
   end
 
+  def destroy
+    @section = Section.find(params[:id])
+    @section.destroy
+    render('sections/destrot.html.erb')
+  end
+
 
 end

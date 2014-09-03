@@ -2,6 +2,6 @@
 
 <ul>
   <% @section.each do |section| %>
-    <li><%= section.name %></li>
+    <li><a href="/sections/<%= section.id %>"><%= section.name %></li>
   <% end %>
 </ul>
