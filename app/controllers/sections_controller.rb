@@ -42,7 +42,7 @@ class SectionsController < ApplicationController
   def destroy
     @section = Section.find(params[:id])
     @section.destroy
-    render('sections/destrot.html.erb')
+    render('sections/destroy.html.erb')
   end
 
 

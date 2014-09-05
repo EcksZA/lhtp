@@ -1,6 +1,6 @@
 class LessonsController < ApplicationController
   def index
-    @lesson = Lesson.all
+    @lesson = Lesson.all.sort_by(&:number)
     render('lessons/index.html.erb')
   end
 
@@ -10,7 +10,6 @@ class LessonsController < ApplicationController
   end
 
   def new
-    @section = Section.all
     @lesson = Lesson.new
     render('lessons/new.html.erb')
   end
